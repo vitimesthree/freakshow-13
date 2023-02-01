@@ -1,0 +1,12 @@
+---
+---
+// Fonts
+@font-face {
+    font-family: 'OldStandardTT';
+    src: url({{ "/assets/fonts/OldStandardTT-Regular.tff" | prepend: site.baseurl }});
+}
+
+// Specify _sass files to use.
+@import "variables";
+@import "mixin";
+@import "styles";

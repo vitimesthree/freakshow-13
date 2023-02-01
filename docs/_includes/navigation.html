@@ -1,0 +1,17 @@
+<nav id="navigation">
+  <!--
+  This code generates the navigation menu from _data/navigation.yml.
+  It also checks if you're on the homepage to avoid issues.
+  
+  Might not be best practise, but it functions. Feel free to replace with cleaner code if functional.
+  -->
+  {% for item in site.data.navigation %}
+    {% assign url = item.link %}
+    {% if item.link != "/" %}
+      {% assign url = url | append: ".html" %}
+    {% endif %}
+    <a href="{{ item.link | prepend:site.baseurl }}" {% if page.url == url %}class="selected"{% endif %}>
+      {{ item.name }}
+    </a>
+  {% endfor %}
+</nav>
