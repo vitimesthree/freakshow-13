@@ -19,19 +19,52 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Freakshow 13
+email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Sonic Adventure but with 13 characters? Sign me up!
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
 baseurl: "/freakshow-13" # the subpath of your site, e.g. /blog
-url: "https://vitimesthree.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
-# These are custom variables written by me (vitimesthree) to make it easier to access assets.
+# Quick subpaths for images, audio, and video
 imageurl: "/freakshow-13/assets/images/"
 audiourl: "/freakshow-13/assets/audio/"
 videourl: "/freakshow-13/assets/videos/"
 
-# Defaults. For example, this is useful for defining a default layout for the entire site.
+url: "https://vitimesthree.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  vitimesthree
+
 defaults:
   - scope:
       path: ""
     values:
       layout: "default"
+      image: "banner.png"
+
+kramdown:
+  auto_ids: "false"
+
+# Build settings
+# theme: minima
+#plugins:
+#  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

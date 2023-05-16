@@ -1,0 +1,15 @@
+---
+---
+// Fonts
+
+//@font-face {
+//    font-family: 'Font Name';
+//    src: url({{ '/assets/fonts/font-name.ttf' | prepend: site.baseurl }});
+//}
+
+// CSS
+html {
+    @import "mixin";
+    @import "variables";
+    @import "styles";
+}

@@ -1,0 +1,43 @@
+---
+---
+{% comment %}
+
+    This layout is the default. It is meant for most pages.
+
+{% endcomment %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page information -->
+    <title>{{ site.title }} - {{ page.title }}</title>
+    <link rel="icon"
+      type="image/png"
+      href={{ "/favicon.ico" | prepend: site.baseurl }}>
+
+    <!-- Meta Tags -->
+    <meta property="og:url" content="{{ site.baseurl | prepend: site.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ site.title }} - {{ page.title }}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:image" content="{{ page.image  | prepend: site.imageurl | prepend: site.url }}">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="{{ site.url }}">
+    <meta property="twitter:url" content="{{ site.baseurl | prepend: site.url }}">
+    <meta name="twitter:title" content="{{ site.title }} - {{ page.title }}">
+    <meta name="twitter:description" content="{{ site.description }}">
+    <meta name="twitter:image" content="{{ page.image  | prepend: site.imageurl | prepend: site.url }}">
+
+    <!-- Assets -->
+    <link rel="stylesheet" href={{ "/assets/css/main.css" | prepend: site.baseurl }}>
+    <script src={{ "/assets/js/app.js?" | prepend: site.baseurl}}></script>
+  </head>
+  <body>
+    {{ content }}
+  </body>
+</html>

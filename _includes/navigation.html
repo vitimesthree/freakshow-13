@@ -1,10 +1,4 @@
-<nav id="navigation">
-  <!--
-  This code generates the navigation menu from _data/navigation.yml.
-  It also checks if you're on the homepage to avoid issues.
-  
-  Might not be best practise, but it functions. Feel free to replace with cleaner code if functional.
-  -->
+<nav class="page-navigation">
   {% for item in site.data.navigation %}
     {% assign url = item.link %}
     {% if item.link != "/" %}
