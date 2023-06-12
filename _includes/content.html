@@ -5,7 +5,7 @@
             <source src="{{ page.audio | prepend: 'rooms/' | prepend:site.audiourl }}" type="audio/mpeg">
         </audio>
         <!-- Button for turning on audio if autoplay is blocked -->
-        <button id="audio-toggle" class="audio-toggle" onclick="document.getElementById('room-audio').play();">
+        <button id="audio-toggle" class="audio-toggle">
             <p>Toggle!</p>
         </button>
     {% endif %}
