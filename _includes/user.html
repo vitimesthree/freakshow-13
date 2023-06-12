@@ -1,0 +1,25 @@
+<div class="content-container">
+    {% comment %} Obtain the user's filename without extensions as an identifier {% endcomment %}
+    {% assign user_slug = page.relative_path | split: '/' | last | split: '.' | first %}
+
+    <div class="forum-user-header">
+        <h1>{{ page.username }}</h1>
+        <img src="{{ page.avatar }}" with="128" height="128"/>
+    </div>
+    <p>{{ page.description }}</p>
+    <div class="forum-user-signature">
+        <p>{{ page.signature }}</p>
+    </div>
+
+    <h2>Posts by this user:</h2>
+    <ul>
+        {% comment %} Show the threads the user has posted {% endcomment %}
+        {% for thread in site.threads %}
+            {% if thread.user == user_slug %}
+                <li>
+                    <a href="{{ thread.url | prepend: site.baseurl }}">{{ thread.title }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

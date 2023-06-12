@@ -1,0 +1,19 @@
+.forum {
+    &-user {
+        &-header {
+            display: flex;
+        }
+
+        &-signature {
+            border: grey solid 0.1rem;
+        }
+    }
+    &-thread {
+        border: white solid 0.1rem;
+        padding: 1rem;
+
+        &-user {
+            display: flex;
+        }
+    }
+}

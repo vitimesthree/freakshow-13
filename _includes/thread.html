@@ -1,0 +1,36 @@
+<div class="content-container">    
+    <div class="forum-thread">
+        <h1>{{ page.title }}</h1>
+        {% for user in site.users %}
+            {% comment %} Obtain the user's filename without extensions as an identifier {% endcomment %}
+            {% assign user_slug = user.relative_path | split: '/' | last | split: '.' | first %}
+            {% if user_slug == page.user %}
+                <div class="forum-thread-user">
+                    <img src="{{user.avatar}}" with="64" height="64"/>
+                    <a href={{user.url | prepend: site.baseurl}}>{{user.username}}</a>
+                </div>
+                <p>{{ page.post }}</p>
+                <p>{{ user.signature }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    {% for reply in page.replies %}
+        <div class="forum-thread">
+            {% for user in site.users %}
+                {% comment %} Obtain the user's filename without extensions as an identifier {% endcomment %}
+                {% assign user_slug = user.relative_path | split: '/' | last | split: '.' | first %}
+                {% if user_slug == reply.user %}
+                    <div class="forum-thread-user">
+                        <img src="{{ user.avatar }}" with="64" height="64"/>
+                        <a href={{user.url | prepend: site.baseurl }}>{{ user.username }}</a>
+                    </div>
+                    <p>{{ reply.post }}</p>
+                    <div class="forum-user-signature">
+                        <p>{{ user.signature }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>

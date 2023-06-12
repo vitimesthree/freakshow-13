@@ -40,9 +40,27 @@ defaults:
     values:
       layout: "default"
       image: "banner.png"
+  - scope:
+      path: ""
+      type: "threads"
+    values:
+      layout: "thread"
+  - scope:
+      path: ""
+      type: "users"
+    values:
+      layout: "user"
 
 kramdown:
   auto_ids: "false"
+
+collections:
+  users:
+    output: true
+    permalink: /forum/user/:path
+  threads:
+    output: true
+    permalink: /forum/:path
 
 # Build settings
 # theme: minima

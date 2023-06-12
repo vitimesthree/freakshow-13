@@ -1,0 +1,16 @@
+<h1>{{page.title}}</h1>
+
+{% comment %} Get the current page slug {%endcomment%}
+{% assign slug = page.url | remove_first: '/' | split: '/' | last %}
+
+{% comment %} Iterate through each page in the forum collection {% endcomment %}
+{% for thread in site.threads %}
+    {% assign path = thread.url | remove_first: '/' | split: '/' %}
+    {% assign category = path[1] %}
+
+    {% comment %} If the category is the same as the current page slug, display the post. Also make sure  {% endcomment %}
+    {% if category == slug and !path[2] %}
+        <p><a href="{{ thread.url | prepend: site.baseurl }}">{{ thread.title }}</a></p>
+        <h6>{{ thread.date }}</h6>
+    {% endif %}
+{% endfor %}

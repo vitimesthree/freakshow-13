@@ -1,0 +1,15 @@
+---
+title: Forum
+---
+<h1>Forum</h1>
+<p>This is the forum page.</p>
+
+{% comment %} Iterate through each page in the forum collection {% endcomment %}
+{% for thread in site.threads %}
+    {% assign path = thread.url | remove_first: '/' | split: '/' %}
+
+{% comment %} If the page contains a category but no post, it's the category page and should be displayed {% endcomment %}
+    {% if path[1] != null and path[2] == null %}
+        <p><a href={{ thread.url | prepend: site.baseurl }}>{{ thread.title }}</a></p>
+    {% endif %}
+{% endfor %}
