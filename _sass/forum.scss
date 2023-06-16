@@ -1,19 +1,49 @@
 .forum {
-    &-user {
-        &-header {
-            display: flex;
+    &-thread {
+        display: flex;
+        flex-direction: column;
+
+        gap: 1rem;
+
+        &-topic {
+            h1 {
+                margin: 2rem 1rem;
+            }
         }
 
-        &-signature {
-            border: grey solid 0.1rem;
+        &-post {
+            display: flex;
+            margin: 0 auto;
+
+            max-width: 95%;
         }
-    }
-    &-thread {
-        border: white solid 0.1rem;
-        padding: 1rem;
+
+        &-icon {
+            margin-right: 1rem;
+            img {
+                // None yet
+            }
+        }
+
+        &-content {
+            width: 100%;
+        }
 
         &-user {
             display: flex;
+            gap: 1rem;
         }
+
+        &-date {
+            font-size: small;
+        }
+
+        &-signature {
+            border: 1px solid $secondary;
+        }
+    }
+
+    &-signature {
+        // None yet
     }
 }

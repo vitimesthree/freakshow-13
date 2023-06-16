@@ -1,9 +1,9 @@
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 //h1 {font-size: $font-size + 1rem}
@@ -14,42 +14,54 @@ body {
 //h6 {font-size: $font-size - 0.6rem}
 
 img {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 header {
-  display: flex;
+    display: flex;
 }
 
 footer {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 // Classes
 
 .layout-container {
-  display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 100%;
+    max-width: $page-width;
 }
 
 .content-container {
-  width: 100%;
-  max-width: $content-width;
+    flex-grow: 1;
 
-  color: $foreground;
-  background-color: $background;
+    width: 100%;
+    max-width: $content-width;
+
+    color: $foreground;
+    background-color: $background;
+}
+
+.content {
+    margin: 0 auto;
+    width: 90%;
 }
 
 .page-navigation {
-  color: $foreground;
-  background-color: $background;
+    color: $foreground;
+    background-color: $background;
 
-  opacity: 0.8;
+    opacity: 0.8;
 }
 
 .background-image {
-  z-index: -1;
-  width: 100%;
-  height: auto;
+    z-index: -1;
+    width: 100%;
+    height: auto;
 }

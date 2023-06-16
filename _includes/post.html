@@ -1,0 +1,22 @@
+{% for user in site.users %}
+    {% comment %} Obtain the user's filename without extensions as an identifier {% endcomment %}
+    {% assign user_slug = user.relative_path | split: '/' | last | split: '.' | first %}
+    {% if user_slug == post_type.user %}
+        <div class="forum-thread-post">
+            <div class="forum-thread-icon">
+                <img src="{{user.avatar}}" with="64" height="64"/>
+            </div>
+            <div class="forum-thread-content">
+                <div class="forum-thread-user">
+                    <a href={{user.url | prepend: site.baseurl}}>{{user.username}}</a>
+                    {% comment %} Show date and time {% endcomment %}
+                    <div class="forum-thread-date">{{ post_type.date | date: "%Y-%m-%d %H:%M:%S"}}</div>
+                </div>
+                <p>{{ post_type.post }}</p>
+                <div class="forum-thread-signature">
+                    <p>{{ user.signature }}</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
