@@ -2,5 +2,7 @@
 {% comment %} If page.slug is not empty, show the back button {% endcomment %}
 {% if page.slug %}
     {% comment %} Return back to previous page by removing the slug from the url {% endcomment %}
-    <a href="{{ page.url | remove: page.slug | prepend: site.baseurl }}">Back</a>
+    <div class="breadcrumbs">
+        <a href="{{ page.url | remove: page.slug | prepend: site.baseurl }}">Back</a>
+    </div>
 {% endif %}

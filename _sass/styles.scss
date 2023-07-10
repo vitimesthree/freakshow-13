@@ -4,6 +4,9 @@ body {
     align-items: center;
 
     margin: 0 auto;
+
+    color: $foreground;
+    background: $background;
 }
 
 //h1 {font-size: $font-size + 1rem}
@@ -12,6 +15,14 @@ body {
 //h4 {font-size: $font-size}
 //h5 {font-size: $font-size - 0.3rem}
 //h6 {font-size: $font-size - 0.6rem}
+
+a {
+    color: inherit;
+
+    &:hover {
+        color: $primary;
+    }
+}
 
 img {
     display: flex;
@@ -44,8 +55,7 @@ footer {
     width: 100%;
     max-width: $content-width;
 
-    color: $foreground;
-    background-color: $background;
+    background-color: $background-content;
 }
 
 .content {
@@ -54,8 +64,7 @@ footer {
 }
 
 .page-navigation {
-    color: $foreground;
-    background-color: $background;
+    background-color: $background-navigation;
 
     opacity: 0.8;
 }
@@ -64,4 +73,28 @@ footer {
     z-index: -1;
     width: 100%;
     height: auto;
+}
+
+.audio-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+
+    background: none;
+    border: none;
+    color: $foreground;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.breadcrumbs {
+    margin: 1rem;
+    margin-bottom: 0;
+}
+
+.divider {
+    height: 1px;
+    background-color: $foreground-secondary;
 }

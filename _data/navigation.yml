@@ -1,8 +1,8 @@
-- name: home
+- name: Home
   link: /
-- name: about
+- name: About
   link: /about
-- name: house
+- name: House
   link: /house
-- name: forum
+- name: Forum
   link: /forum

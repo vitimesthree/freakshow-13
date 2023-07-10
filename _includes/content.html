@@ -6,7 +6,8 @@
         </audio>
         <!-- Button for turning on audio if autoplay is blocked -->
         <button id="audio-toggle" class="audio-toggle">
-            <p>Toggle!</p>
+            <img id="audio-toggle-img" src={{ "audio_toggle_mute.png" | prepend: site.imageurl }} width="64" height="64"></img>
+            Toggle Music
         </button>
     {% endif %}
     {% include breadcrumbs.html %}

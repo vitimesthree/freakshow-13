@@ -8,11 +8,16 @@ document.addEventListener("DOMContentLoaded", function () {
     var isPlaying = false;
 
     // When audio plays or stops
+    audioToggle = document.getElementById('audio-toggle-img');
     roomAudio.onplaying = function() {
         isPlaying = true;
+        // Replace mute in image source with playing
+        audioToggle.src = audioToggle.src.replace('_mute', '_playing');
     };
     roomAudio.onpause = function() {
         isPlaying = false;
+        // Replace playing in image source with mute
+        audioToggle.src = audioToggle.src.replace('_playing', '_mute');
     };
 
     // Check if audio is playing
